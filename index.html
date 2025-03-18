@@ -1,1 +1,75 @@
-<!doctype html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Keynote</title><meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body id="body" bgcolor="black"><div id="stageArea"><div id="stage" class="stage"></div><div id="hyperlinkPlane" class="stage"></div></div><div id="slideshowNavigator"></div><div id="slideNumberControl"></div><div id="slideNumberDisplay"></div><div id="helpPlacard"></div><div id="waitingIndicator"><div id="waitingSpinner"></div></div><script src="assets/player/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Keynote presentation viewer">
+    <title>Keynote</title>
+    
+    <!-- Basic Styling -->
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        #stageArea {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #waitingIndicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #waitingSpinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="stageArea">
+        <div id="stage" class="stage"></div>
+        <div id="hyperlinkPlane" class="stage"></div>
+    </div>
+
+    <div id="slideshowNavigator" aria-label="Slideshow Navigation"></div>
+    <div id="slideNumberControl" aria-label="Slide Number Control"></div>
+    <div id="slideNumberDisplay" aria-live="polite"></div>
+    <div id="helpPlacard" role="alert"></div>
+
+    <div id="waitingIndicator">
+        <div id="waitingSpinner"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/player/main.js" defer></script>
+
+</body>
+</html>
